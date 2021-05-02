@@ -432,7 +432,7 @@ function AutorePreferito(data, msg, tipo) {
                         return console.log(err.message);
                     }
                     console.log("Autore preferito aggiunto con successo");
-                    bot.sendMessage(msg.chat.id, "Autore preferito aggiunto con successo");
+                    bot.sendMessage(msg.chat.id, "Autore preferito aggiunto con successo, [Clicca qui per poter vedere tutti i tuoi libri e autori preferiti](https://bookbot-telegram.herokuapp.com/)", { parse_mode: 'Markdown' });
                 })
             } else {
                 db.run(sql_insert, [data[0].title, null, data[0].url, tipo, row.IdUtente], function(err) {
@@ -440,7 +440,7 @@ function AutorePreferito(data, msg, tipo) {
                         return console.log(err.message);
                     }
                     console.log("Autore preferito aggiunto con successo");
-                    bot.sendMessage(msg.chat.id, "Autore preferito aggiunto con successo");
+                    bot.sendMessage(msg.chat.id, "Autore preferito aggiunto con successo, [Clicca qui per poter vedere tutti i tuoi libri e autori preferiti](https://bookbot-telegram.herokuapp.com/)", { parse_mode: 'Markdown' });
                 })
             }
         } else {
@@ -532,7 +532,7 @@ function LibroPreferito(data, msg, tipo) {
                         return console.log(err.message);
                     }
                     console.log("Libro preferito aggiunto con successo");
-                    bot.sendMessage(msg.chat.id, "Libro preferito aggiunto con successo");
+                    bot.sendMessage(msg.chat.id, "Libro preferito aggiunto con successo, [Clicca qui per poter vedere tutti i tuoi libri e autori preferiti](https://bookbot-telegram.herokuapp.com/)", { parse_mode: 'Markdown' });
                 })
             } else if (tipo == "amazon") {
                 let link = "https://www.amazon.it" + data.searchResults[0].productUrl;
@@ -541,7 +541,7 @@ function LibroPreferito(data, msg, tipo) {
                         return console.log(err.message);
                     }
                     console.log("Libro preferito aggiunto con successo");
-                    bot.sendMessage(msg.chat.id, "Libro preferito aggiunto con successo");
+                    bot.sendMessage(msg.chat.id, "Libro preferito aggiunto con successo, [Clicca qui per poter vedere tutti i tuoi libri e autori preferiti](https://bookbot-telegram.herokuapp.com/)", { parse_mode: 'Markdown' });
                 })
             } else if (tipo == "google") {
                 db.run(sql_insert, [data[0].title, null, tipo, null, data[0].authors[0], data[0].link, row.IdUtente], function(err) {
@@ -549,7 +549,7 @@ function LibroPreferito(data, msg, tipo) {
                         return console.log(err.message);
                     }
                     console.log("Libro preferito aggiunto con successo");
-                    bot.sendMessage(msg.chat.id, "Libro preferito aggiunto con successo");
+                    bot.sendMessage(msg.chat.id, "Libro preferito aggiunto con successo, [Clicca qui per poter vedere tutti i tuoi libri e autori preferiti](https://bookbot-telegram.herokuapp.com/)", { parse_mode: 'Markdown' });
                 })
             }
         } else {
