@@ -3,50 +3,54 @@
 
     <body>
         <div class="content">
-            <%- include ('template/navbar.ejs') %>
-                <div class="conntable">
-                    <table class="table table-striped table-hover table-dark">
-                        <thead>
-                            <tr>
-                                <th scope="col">Titolo</th>
-                                <th scope="col">Descrizione</th>
-                                <th scope="col">Ricercato con</th>
-                                <th scope="col">Valutazione</th>
-                                <th scope="col">Autore</th>
-                                <th scope="col">Link</th>
-                                <th scope="col">Rimuovi da preferiti</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% libri.forEach(function(libro) { %>
-                                <tr>
-                                    <td>
-                                        <%= libro.Titolo %>
-                                    </td>
-                                    <td>
-                                        <%= libro.Descrizione %>
-                                    </td>
-                                    <td>
-                                        <%= libro.RicercatoCon %>
-                                    </td>
-                                    <td>
-                                        <%= libro.Valutazione %>
-                                    </td>
-                                    <td>
-                                        <%= libro.Autore %>
-                                    </td>
-                                    <td>
-                                        <%= libro.Link %>
-                                    </td>
-                                    <td>
-                                        <a href="/rimuovilibro?IdLibro=<%=libro.IdLibro%>">Rimuovi</a>
-                                    </td>
-                                </tr>
-                                <% }); %>
+            <% if(utente.Username==undefined){%>
+                <h5 style="margin:0 auto;">Non puoi accedere a questa pagina senza essere loggato.<a href="/login">Clicca qui per loggarti</a></h5>
+                <%} else{%>
+                    <%- include ('template/navbar.ejs') %>
+                        <div class="conntable">
+                            <table class="table table-striped table-hover table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Titolo</th>
+                                        <th scope="col">Descrizione</th>
+                                        <th scope="col">Ricercato con</th>
+                                        <th scope="col">Valutazione</th>
+                                        <th scope="col">Autore</th>
+                                        <th scope="col">Link</th>
+                                        <th scope="col">Rimuovi da preferiti</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% libri.forEach(function(libro) { %>
+                                        <tr>
+                                            <td>
+                                                <%= libro.Titolo %>
+                                            </td>
+                                            <td>
+                                                <%= libro.Descrizione %>
+                                            </td>
+                                            <td>
+                                                <%= libro.RicercatoCon %>
+                                            </td>
+                                            <td>
+                                                <%= libro.Valutazione %>
+                                            </td>
+                                            <td>
+                                                <%= libro.Autore %>
+                                            </td>
+                                            <td>
+                                                <%= libro.Link %>
+                                            </td>
+                                            <td>
+                                                <a href="/rimuovilibro?IdLibro=<%=libro.IdLibro%>">Rimuovi</a>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
 
-                        </tbody>
-                    </table>
-                </div>
+                                </tbody>
+                            </table>
+                        </div>
+                        <%}%>
         </div>
         <%- include ('template/footer.ejs') %>
     </body>

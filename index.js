@@ -23,14 +23,16 @@ const bot = new TelegramBot(token, {
 bot.on("polling_error", (msg) => console.log(msg));
 loggato = 0;
 
-
-let db = new sqlite3.Database('bookbot.db', (err) => {
-    if (err) {
-        console.error(err.message);
-    }
-    console.log('Connessione al database riuscita');
-})
-
+function connect() {
+    let db = new sqlite3.Database('bookbot.db', (err) => {
+        if (err) {
+            console.error(err.message);
+        }
+        console.log('Connessione al database riuscita');
+    })
+    return db;
+}
+let db = connect();
 
 bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "Benvenuto nel @BookInformation_bot, effettua il login o registrati per effettuare ricerche e per poter salvare i tuoi libri e autori preferiti! ", {

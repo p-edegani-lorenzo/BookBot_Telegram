@@ -3,23 +3,19 @@
 
     <body>
         <div class="content">
-            <%- include ('template/navbar.ejs') %>
-                <% if(utente.Username==undefined){%>
-                    <h5 style="margin:0 auto;">Non puoi accedere a questa pagina senza essere loggato.<a href="/login">Clicca qui per loggarti</a></h5>
-                    <%} else{%>
-                        <div id="admin">
-                            <div class="container-admin">
-                                <div id="admin-row" class="row justify-content-center align-items-center">
-                                    <div id="admin-column" class="col-md-6">
-                                        <div id="admin-box" class="col-md-12">
-                                            <div id="admin-form" class="row g-3" action="" method="post" style="border-style:solid; width: 500px; border-width:4px;border-color:#d6ad60;color:white;">
-                                                <div class="form-group" style="text-align:center;">
-                                                    <a href="/libri"><input type="submit" name="submit" class="btn btn-info btn-md" value="Libri preferiti" style="margin-top:15px; width: 190px;"></a>
-                                                </div>
-                                                <div class="form-group" style="text-align:center;">
-                                                    <a href="/autori"><input type="submit" name="submit" class="btn btn-info btn-md" value="Autori preferiti" style="margin-top:15px; width: 190px;"></a>
-                                                </div>
-                                            </div>
+            <% if(utente.Username==undefined){%>
+                <h5 style="margin:0 auto;">Non puoi accedere a questa pagina senza essere loggato.<a href="/login">Clicca qui per loggarti</a></h5>
+                <%} else{%>
+                    <%- include ('template/navbar.ejs') %>
+                        <div class="container" style="padding-top:300px; padding-left:50px;">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-md-6">
+                                    <div class="row g-3" action="" method="post" style="border-style:solid; width: 500px; border-width:4px;border-color:#d6ad60;color:white;">
+                                        <div class="form-group col-md-4" style="text-align:center;">
+                                            <a href="/libri"><input type="submit" name="submit" class="btn btn-info btn-md" value="Libri preferiti" style="margin-top:15px; width: 190px;"></a>
+                                        </div>
+                                        <div class="form-group col-md-8" style="padding-left:110px; text-align:center;">
+                                            <a href="/autori"><input type="submit" name="submit" class="btn btn-info btn-md" value="Autori preferiti" style="margin-top:15px; width: 190px;"></a>
                                         </div>
                                     </div>
                                 </div>
