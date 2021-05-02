@@ -1,0 +1,33 @@
+{
+  "name": "bot_telegram",
+  "version": "1.0.0",
+  "description": "BookInformation_bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@dada513/wikipedia-search": "^1.0.1",
+    "amazon-book-search-se": "0.0.9",
+    "amazon-product-search-results": "^1.0.1",
+    "bcrypt": "^5.0.1",
+    "bday": "^1.0.8",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "google-books-search": "^0.3.1",
+    "google-search-results-serpwow": "0.0.14",
+    "itunes-web-api": "^1.0.7",
+    "node-isbn": "^1.6.1",
+    "node-telegram-bot-api": "^0.51.0",
+    "sqlite3": "^5.0.2",
+    "unofficial-amazon-search": "^2.0.6",
+    "wikipediadeadoralive": "^1.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
